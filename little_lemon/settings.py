@@ -75,8 +75,16 @@ WSGI_APPLICATION = "little_lemon.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        # "NAME": "db_name",  # Read from .my.cnf
+        # "USER": "user",  # Read from .my.cnf
+        # "PASSWORD": "password",  # Read from .my.cnf
+        "HOST": "localhost",
+        "PORT": "3306",
+        "OPTIONS": {
+            "read_default_file": str(BASE_DIR / ".my.cnf"),  # Read settings from file
+            "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
 
@@ -117,12 +125,12 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    "/var/www/static/",
-]
