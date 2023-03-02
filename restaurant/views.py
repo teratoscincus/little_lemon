@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.viewsets import ModelViewSet
 
-from .models import Menu, Booking
+from .models import MenuItem, Booking
 from .serializers import MenuSerializer, BookingSerializer
 
 # Webpage views
@@ -16,12 +16,12 @@ def index(request):
 
 
 class MenuItemView(ListCreateAPIView):
-    queryset = Menu.objects.all()
+    queryset = MenuItem.objects.all()
     serializer_class = MenuSerializer
 
 
 class SingleMenuItemView(RetrieveUpdateDestroyAPIView):
-    queryset = Menu.objects.all()
+    queryset = MenuItem.objects.all()
     serializer_class = MenuSerializer
 
 
