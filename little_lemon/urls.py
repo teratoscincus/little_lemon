@@ -29,7 +29,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # Webpage and API URLs
     path("", include("restaurant.urls")),
-    path("restaurant/booking/", include(router.urls)),
+    path("api/restaurant/booking/", include(router.urls)),
     # Djoser URLs
     path("auth/", include("djoser.urls")),
     path("auth/", include("djoser.urls.authtoken")),

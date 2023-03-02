@@ -7,9 +7,9 @@ urlpatterns = [
     # Webpage URLs
     path("", views.index, name="index"),
     # API URLs
-    path("restaurant/menu", views.MenuItemView.as_view(), name="menu_items"),
+    path("api/restaurant/menu", views.MenuItemView.as_view(), name="menu_items"),
     path(
-        "restaurant/menu/<int:pk>",
+        "api/restaurant/menu/<int:pk>",
         views.SingleMenuItemView.as_view(),
         name="single_menu_item",
     ),
