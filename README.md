@@ -1,14 +1,24 @@
-## URLs and API endpoints
+# URLs and API endpoints
 
-# Token auth endpoints
-/api-token-auth/    (DRF token - supply username and password in body of POST)
-/auth/              (Prefix for Djoser endpoints)
+## Token auth endpoints
+### DRF token URL
+#### supply username and password in body of POST request
+/api-token-auth/
+### Prefix for Djoser endpoints
+/auth/
 
-# Menu API endpoints
-("?page=" can be added to end of URL to specify page. Shows 2 items per page.)
+## Menu API endpoints
+### URL
 /api/restaurant/menu
+
 /api/restaurant/menu/<int:pk>
 
-# Booking API endpoints
-(Authentication with token required)
+### Pagination
+"?page=" can be added to end of URL to specify page. Shows 2 items per page.
+#### Example
+/api/restaurant/menu?page=1
+
+## Booking API endpoints
+#### Authentication with token required
+### URL
 /api/restaurant/booking/tables
