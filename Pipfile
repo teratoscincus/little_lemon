@@ -10,6 +10,7 @@ djangorestframework = "*"
 djoser = "*"
 mysqlclient = "*"
 django-filter = "*"
+djangorestframework-xml = "*"
 
 [dev-packages]
 
